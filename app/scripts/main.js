@@ -44,5 +44,22 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(window).load(function($){
-
+    'use strict';
+    /*sticky footer*/
+    var footer = jQuery('footer');
+    var pos = footer.position();
+    var height = jQuery(window).height();
+    height = height - pos.top;
+    height = height - footer.height()  ;
+    if (height > 0) {
+        footer.css({
+            'margin-top': height + 'px'
+        });
+    }
+    var H = 0;
+    jQuery("div.equals-height").each(function(i){
+        var h = jQuery("div.equals-height").eq(i).height();
+        if(h > H) H = h;
+    });
+    jQuery("div.equals-height").height(H);
 });

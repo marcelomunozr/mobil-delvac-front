@@ -105,7 +105,24 @@ $fa-font-path:"../bower_components/font-awesome/fonts";
 .bg-white{
   background: #fff;
 }
-
+.btn-more{
+  font-size: 13px;
+  color: #000;
+  background: none;
+  text-align: center;
+  border-radius: 0;
+  border: 2px solid #000;
+  font-family: mobil, sans-serif;
+  padding: 5px 20px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}
 body{
     font-family: 'Helvetica', sans-serif;
 }
@@ -159,7 +176,128 @@ header{
     }
   }
 }
-
+.carousel{
+  .img-inner{
+    position: relative;
+    .pattern-slide{
+      width: 1386px;
+      max-width: 80%;
+      background: url(../images/pattern-slide.png) right;
+      background-size: 100%;
+      background-repeat: repeat-y;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+    }
+  }
+  .absolute-controls{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: auto;
+    margin-left: auto;
+    right: auto;
+  }
+  .carousel-indicators{
+    margin: 0;
+    width: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    top: 100px;
+    position: relative;
+    z-index: 10;
+    li{
+      border: 2px solid #c1c1c1;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      display: block;
+      margin: 0;
+      margin-bottom: 20px;
+      position: relative;
+      &.active,
+      &:hover{
+        background: none;
+        border-color: #000;
+      }
+      &.active:before,
+      &:hover:before{
+        content: "";
+        width: 18px;
+        height: 18px;
+        position: relative;
+        display: block;
+        top: 4px;
+        left: 4px;
+        background: #000;
+        border-radius: 100%;
+      }
+      &:after{
+        content: "";
+        height: 20px;
+        width: 2px;
+        background: #c1c1c1;
+        position: absolute;
+        top: 100%;
+        margin-top: 2px;
+        margin-left: -1px;
+      }
+    }
+    li:last-child:after{
+      display: none;
+    }
+  }
+  .carousel-caption{
+    position: absolute;
+    right: auto;
+    left: 0;
+    top: 100px;
+    bottom: auto;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    padding: 0;
+    z-index: 11;
+    h6{
+      color: #000;
+      margin: 0 0 10px 0;
+      text-transform: uppercase;
+      font-size: 16px;
+      text-shadow: none;
+    }
+    h2{
+      margin: 0;
+      color: #000;
+      font-size: 34px;
+      text-transform: uppercase;
+      text-shadow: none;
+    }
+    p{
+      color: #000;
+      text-shadow: none;
+    }
+    .btn-carousel{
+      font-size: 13px;
+      color: #000;
+      background: none;
+      text-align: center;
+      border-radius: 0;
+      border: 2px solid #000;
+      font-family: mobil, sans-serif;
+      padding: 5px 20px;
+      margin-top: 5px;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+}
 .sections{
   position: relative;
   .bmarg{
@@ -222,13 +360,13 @@ header{
     }
   }
   .comunidad{
-    background: url(../images/bg-comunidad.jpg) no-repeat;
+    background: #005da9 url(../images/bg-comunidad.jpg) no-repeat;
     padding: 100px 0 30px 0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-size: 100%;
+    /*background-size: 100%;*/
     &:before,
     &:after{
       content: "";
@@ -237,13 +375,13 @@ header{
     }
   }
   .novedades{
-    background: url(../images/bg-novedades.jpg) no-repeat;
+    background: #df1c24 url(../images/bg-novedades.jpg) no-repeat;
     padding: 100px 0 30px 0;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-size: 100%;
+    /*background-size: 100%;*/
   }
   .text-box{
     background: #fff;
@@ -303,6 +441,7 @@ header{
   position: relative;
   .slick-slider{
     padding: 10px 0;
+    margin-bottom: 30px;
     .slick-slide.slide-active:focus,
     .slick-slide:focus{
       outline: 0;
@@ -437,8 +576,80 @@ h2{
   text-transform: uppercase;
 }
 
+/*footer*/
+footer{
+  background: #000;
+  width: 100%;
+  padding: 15px 0;
+  .navbar-default{
+    background: none;
+    border-radius: 0;
+    border: none;
+    margin: 0;
+  }
+  .container-fluid{
+    padding: 0;
+  }
+  h1{
+    font-size: 0;
+    line-height: 0;
+    color: #000;
+    margin: 0;
+  }
+  .logo{
+    width: 207px;
+    height: 27px;
+  }
+  .navi{
+    padding-top: 5px;
+    margin-bottom: 0;
+    li{
+      list-style: none;
+      display: inline-block;
+      a{
+        line-height: 40px;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: mobil, sans-serif;
+        font-weight: normal;
+        font-size: 13px;
+        padding: 0 15px;
+      }
+      &:last-child a{
+        padding-right: 0;
+      }
+    }
+  }
+  p{
+    color: #808080;
+    font-size: 11px;
+    font-family: 'Helvetica', sans-serif;
+    margin-bottom: 0;
+  }
+}
 
 @media screen and (max-width: 768px) {
+  header{
+    .logo{
+      width: 200px;
+      height: 25px;
+    }
+    .navbar-default .navbar-toggle{
+      margin-right: 0;
+      border: none;
+      margin-top: 12px;
+      border-radius: 0;
+      .icon-bar{
+        background: #fff;
+      }
+    }
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+      background: #fff;
+      .icon-bar{
+        background: #000;
+      }
+    }
+  }
   .sections {
     .nav-tabs, 
     .tab-comunidad{
@@ -453,7 +664,6 @@ h2{
           padding: 5px 0;
           text-align: center;
         }
-
       }
       &:before,
       &:after{
@@ -480,6 +690,36 @@ h2{
       padding: 9px 4px;
       min-height: 46px;
       font-size: 14px;
+    }
+  }
+  .carousel{
+    display: none;
+  }
+  .equals-height.border-l{
+    border: none;
+  }
+  footer{
+    .navbar-default .navbar-brand{
+      width: 100%;
+      float: none;
+    }
+    h1{
+      width: 100%;
+    }
+    .logo{
+      margin: 0 auto;
+      display: block;
+    }
+    .navi{
+      padding-left: 0;
+      text-align: center;
+      li{
+        display: block;
+      }
+    }
+    p{
+      text-align: center;
+      margin: 10px 0;
     }
   }
 }
