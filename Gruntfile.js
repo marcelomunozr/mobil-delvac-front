@@ -345,8 +345,7 @@ module.exports = function (grunt) {
           src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
           dest: '<%= config.dist %>'
         }, {
-
-//for font-awesome
+        //for font-awesome
           expand: true,
           dot: true,
           cwd: '.',

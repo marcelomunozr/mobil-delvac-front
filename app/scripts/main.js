@@ -8,6 +8,14 @@ jQuery(document).ready(function($) {
 		jQuery('.nav-tabs').removeClass('tab-novedades');
 		jQuery('.nav-tabs').addClass('tab-comunidad');
 	});
+    /*current*/
+	var str=location.href.toLowerCase();
+	jQuery(".sections .nav-categories li a").each(function() {
+		if (str.indexOf(this.href.toLowerCase()) > -1) {
+		 	jQuery(".sections .nav-categories li.active").removeClass("active");
+			jQuery(this).parent().addClass("active");
+		}
+	});
 	jQuery('.slick-pro').slick({
 		infinite: true,
 		autoplay: true,
@@ -95,9 +103,30 @@ jQuery(window).load(function($){
         });
     }
     var H = 0;
+
+    /*equal height*/
     jQuery("div.equals-height").each(function(i){
         var h = jQuery("div.equals-height").eq(i).height();
         if(h > H) H = h;
     });
     jQuery("div.equals-height").height(H);
+
+    /*carousel item height*/
+    var H2 = 0;
+    jQuery("div.item").each(function(i){
+        var h2 = jQuery("div.item").eq(i).height();
+        if(h2 > H2) H2 = h2;
+    });
+    jQuery("div.item").height(H2);
+
+});
+
+
+jQuery(window).scroll(function() {
+if (jQuery(this).scrollTop() > 1){  
+    jQuery('header').addClass("sticky");
+  }
+  else{
+    jQuery('header').removeClass("sticky");
+  }
 });
